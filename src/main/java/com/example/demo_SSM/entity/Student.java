@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -15,8 +16,7 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private  String name;
-
-    @OneToMany(mappedBy = "student")
-    List<Marks> marks;
-
+    private String className;
+    private LocalDateTime createAt;
+    private LocalDateTime updateAt;
 }
